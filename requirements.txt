@@ -1,0 +1,9 @@
+hyperliquid-python-sdk
+eth-account
+pandas
+numpy
+requests
+schedule
+python-dotenv
+termcolor
+ccxt

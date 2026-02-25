@@ -1,0 +1,26 @@
+# Data (too large for git, stays on VPS)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# Research data
+research/*.db
+research/*.db-wal
+research/*.db-shm
+research/cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

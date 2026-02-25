@@ -1,0 +1,21 @@
+[Unit]
+Description=Kronos Liquidation Collector
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=agent
+WorkingDirectory=/home/agent/kronos-trading/collectors
+ExecStart=/usr/bin/python3 /home/agent/kronos-trading/collectors/liquidation_collector.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Resource limits
+MemoryMax=512M
+CPUQuota=25%
+
+[Install]
+WantedBy=multi-user.target

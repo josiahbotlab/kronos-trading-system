@@ -1,0 +1,2 @@
+date,strategy_name,optimal_tp,optimal_sl,avg_return,symbols_passed,symbols_tested,beat_buy_hold,recommendation,regime
+2026-01-30 21:10,breakout_moondev,5.0,18.0,23.08,8,9,0/9,DEPLOY_CAUTIOUS,

@@ -1,0 +1,1 @@
+# Kronos Trading - Research Module

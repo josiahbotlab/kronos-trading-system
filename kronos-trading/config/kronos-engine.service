@@ -1,0 +1,15 @@
+[Unit]
+Description=Kronos Paper Trading Engine
+After=network.target kronos-prices.service kronos-liquidations.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/agent/kronos-trading
+ExecStart=/usr/bin/python3 execution/live_engine.py --strategy liq_bb_combo --symbol BTC-USD --timeframe 5m --capital 1000
+Restart=always
+RestartSec=30
+StandardOutput=append:/home/agent/kronos-trading/logs/engine.log
+StandardError=append:/home/agent/kronos-trading/logs/engine.log
+
+[Install]
+WantedBy=default.target

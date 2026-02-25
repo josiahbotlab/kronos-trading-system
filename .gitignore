@@ -1,0 +1,59 @@
+# Secrets — NEVER commit
+.env
+kronos-trading/config/kronos.json
+
+# Databases (large, stay on VPS)
+*.db
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# Research cache
+kronos-trading/research/cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and output
+logs/
+*.log
+nohup.out
+
+# Models (large binaries)
+models/
+
+# Data exports
+csvs/
+
+# Generated reports
+reports/
+
+# RBI cache
+rbi/data_cache/
+rbi/backtest_results/
+
+# Polymarket venv
+polymarket_mr_bot/venv/
+polymarket_mr_bot/data/
+
+# Skills (auto-generated, regenerated from trade_journal.db)
+skills/
+
+# Claude Code
+.claude/

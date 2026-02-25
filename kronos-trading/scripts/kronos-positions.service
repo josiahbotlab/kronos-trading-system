@@ -1,0 +1,20 @@
+[Unit]
+Description=Kronos Position/OI Collector
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=agent
+WorkingDirectory=/home/agent/kronos-trading/collectors
+ExecStart=/usr/bin/python3 /home/agent/kronos-trading/collectors/position_collector.py
+Restart=always
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+MemoryMax=256M
+CPUQuota=15%
+
+[Install]
+WantedBy=multi-user.target

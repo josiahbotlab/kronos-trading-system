@@ -1,0 +1,105 @@
+---
+name: momentum_pullback
+description: Buy when RSI < 40 and price above SMA50 (pullback in uptrend)
+entry: RSI crosses below 40 while price > SMA50
+exit: TP or SL hit
+indicators: RSI(14), SMA(50)
+tp_range: [4, 6, 8, 10]
+sl_range: [2, 3, 4, 5]
+status: failed
+---
+name: mean_reversion
+description: Buy when price touches lower Bollinger Band
+entry: Close < Lower BB (20, 2)
+exit: TP or SL hit
+indicators: Bollinger Bands(20, 2)
+tp_range: [3, 4, 5, 6]
+sl_range: [2, 3, 4]
+status: failed
+---
+name: breakout_moondev
+description: MoonDev strategy - buy when hourly close breaks above 20-day resistance
+entry: Close > 20-day rolling high
+exit: TP or SL hit (note: MoonDev found 3% TP / 18% SL optimal for crypto)
+indicators: Rolling High(20)
+tp_range: [2, 3, 4, 5]
+sl_range: [10, 12, 15, 18, 20]
+status: validated_no_bh
+---
+name: gap_and_go
+description: Buy stocks gapping up 2%+ at market open
+entry: Gap >= 2% on open
+exit: TP or SL hit
+indicators: Gap calculation (open vs prev close)
+tp_range: [3, 4, 5, 6, 8]
+sl_range: [1, 2, 3]
+status: failed
+---
+name: macd_bullish
+description: Buy on MACD bullish crossover
+entry: MACD line crosses above signal line
+exit: TP or SL hit
+indicators: MACD(12, 26, 9)
+tp_range: [4, 5, 6]
+sl_range: [2, 3, 4]
+status: failed
+---
+name: bb_bounce
+description: Buy on bounce from lower Bollinger Band with RSI confirmation
+entry: Close < Lower BB AND RSI < 30
+exit: TP or SL hit
+indicators: Bollinger Bands(20, 2), RSI(14)
+tp_range: [3, 4, 5]
+sl_range: [2, 3]
+status: failed
+---
+name: golden_cross
+description: Classic trend-following - buy when SMA50 crosses above SMA200
+entry: SMA(50) crosses above SMA(200)
+exit: SMA(50) crosses below SMA(200) OR TP/SL hit
+indicators: SMA(50), SMA(200)
+tp_range: [8, 10, 12, 15]
+sl_range: [5, 7, 10]
+regime: bull
+status: failed
+---
+name: trailing_stop_trend
+description: Ride trends with trailing stop instead of fixed TP
+entry: Price > SMA(50) AND RSI(14) > 50 AND price making new 20-day high
+exit: Trailing stop 8-12% from high
+indicators: SMA(50), RSI(14), 20-day high
+tp_range: [15, 20, 25]
+sl_range: [8, 10, 12]
+regime: bull
+status: failed
+---
+name: range_mean_reversion
+description: Buy oversold in sideways markets, sell at mean
+entry: RSI(14) < 30 AND price within 5% of 20-day low
+exit: RSI(14) > 70 OR price reaches SMA(20) OR TP/SL
+indicators: RSI(14), SMA(20), 20-day low
+tp_range: [4, 6, 8]
+sl_range: [3, 4, 5]
+regime: sideways
+status: failed
+---
+name: bollinger_squeeze
+description: Trade volatility expansion after low-volatility squeeze
+entry: BB width at 20-day low (squeeze) AND price breaks above upper band
+exit: Price touches middle band OR TP/SL
+indicators: Bollinger Bands(20,2), BB Width
+tp_range: [5, 7, 10]
+sl_range: [3, 4, 5]
+regime: low_volatility
+status: failed
+---
+name: short_overbought
+description: Short overextended moves (PAPER TRADING ONLY)
+entry: RSI(14) > 80 AND price > upper BB(20,2) AND price > SMA(50)*1.1
+exit: RSI < 50 OR price touches middle BB OR TP/SL
+indicators: RSI(14), Bollinger Bands(20,2), SMA(50)
+tp_range: [3, 5, 7]
+sl_range: [4, 5, 7]
+regime: bear_correction
+status: failed
+side: short

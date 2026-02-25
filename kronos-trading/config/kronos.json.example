@@ -1,0 +1,36 @@
+{
+    "coinbase": {
+        "api_key": "YOUR_COINBASE_API_KEY_HERE",
+        "api_secret": "YOUR_COINBASE_API_SECRET_HERE",
+        "paper": true
+    },
+    
+    "risk": {
+        "max_portfolio_drawdown_pct": 15.0,
+        "max_daily_loss_pct": 5.0,
+        "max_open_positions": 5,
+        "max_portfolio_exposure_pct": 50.0,
+        "default_strategy_budget": 100.0,
+        "min_strategy_budget": 10.0,
+        "max_strategy_drawdown_pct": 30.0,
+        "default_risk_per_trade_pct": 1.0,
+        "max_risk_per_trade_pct": 2.0,
+        "kelly_fraction": 0.25,
+        "max_position_size_usd": 500.0,
+        "max_leverage": 5,
+        "kill_switch_active": false,
+        "kill_switch_reason": ""
+    },
+    
+    "telegram": {
+        "bot_token": "",
+        "chat_id": ""
+    },
+    
+    "trading": {
+        "symbols": ["BTC-USD", "ETH-USD", "SOL-USD"],
+        "default_timeframe": "1h",
+        "check_interval_seconds": 60,
+        "enable_auto_trading": false
+    }
+}

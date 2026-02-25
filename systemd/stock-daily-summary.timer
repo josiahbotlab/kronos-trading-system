@@ -1,0 +1,9 @@
+[Unit]
+Description=Stock Daily Summary Timer (Mon-Fri 4:00 PM ET / 21:00 UTC)
+
+[Timer]
+OnCalendar=Mon..Fri *-*-* 21:00:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target
